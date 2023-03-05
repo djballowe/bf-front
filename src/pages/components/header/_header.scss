@@ -1,0 +1,26 @@
+.header {
+  height: $header-height;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.397);
+  .image {
+    object-fit: contain;
+  }
+  button {
+    @include secondary-button-params;
+  }
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  ul {
+    display: flex;
+    align-items: center;
+    margin: 0 10px 0 10px;
+    li {
+      margin: 0 10px 0 10px;
+    }
+  }
+}

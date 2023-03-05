@@ -1,0 +1,28 @@
+.home-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+  height: calc(100vh - $header-height);
+  .grid-items {
+    border: 1px solid red;
+  }
+}
+
+.cover {
+  z-index: -1;
+  position: absolute;
+  background-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(255, 255, 255, 0) 15%,
+      rgba(255, 255, 255, 0) 85%,
+      rgba(0, 0, 0, 1) 98%
+    ),
+    url(../media/testBanner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 75%;
+  width: 100vw;
+  height: 100vh;
+}

@@ -1,0 +1,195 @@
+html {
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: "Libre Franklin", sans-serif;
+  background-color: black;
+  color: white;
+}
+
+.home-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+  height: calc(100vh - 100px);
+}
+.home-container .grid-items {
+  border: 1px solid red;
+}
+
+.cover {
+  z-index: -1;
+  position: absolute;
+  background-image: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgba(255, 255, 255, 0) 15%, rgba(255, 255, 255, 0) 85%, rgb(0, 0, 0) 98%), url(../media/testBanner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 75%;
+  width: 100vw;
+  height: 100vh;
+}
+
+.header {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.397);
+}
+.header .image {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.header button {
+  background-color: transparent;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid white;
+  font-size: 1rem;
+  padding: 5px 25px 5px 25px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.header button:hover {
+  border: 1px solid transparent;
+  background-color: white;
+  color: black;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+.header-right ul {
+  display: flex;
+  align-items: center;
+  margin: 0 10px 0 10px;
+}
+.header-right ul li {
+  margin: 0 10px 0 10px;
+}/*# sourceMappingURL=App.css.map */
