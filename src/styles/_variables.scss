@@ -3,6 +3,10 @@ $secondary-color: black;
 $faded-secondary: #b49b9c;
 $main-button-font: 1rem;
 $header-height: 100px;
+$score-font: 2rem;
+$h2-font: 2rem;
+$h2-weight: 600;
+$live-color: #dc002a;
 
 @mixin secondary-button-params() {
   background-color: transparent;
@@ -18,4 +22,10 @@ $header-height: 100px;
     background-color: $base-color;
     color: $secondary-color;
   }
+}
+
+@mixin flexCenter($justify) {
+    display: flex;
+    align-items: center;
+    justify-content: $justify;
 }

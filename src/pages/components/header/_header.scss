@@ -1,8 +1,6 @@
 .header {
   height: $header-height;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  @include flexCenter(space-between);
   background-color: rgba(0, 0, 0, 0.397);
   .image {
     object-fit: contain;
@@ -13,11 +11,9 @@
 }
 
 .header-right {
-  display: flex;
-  align-items: center;
+  @include flexCenter(flex-start);
   ul {
-    display: flex;
-    align-items: center;
+    @include flexCenter(flex-start);
     margin: 0 10px 0 10px;
     li {
       margin: 0 10px 0 10px;
