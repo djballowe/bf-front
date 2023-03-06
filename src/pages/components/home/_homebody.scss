@@ -1,12 +1,15 @@
 .banner-title {
+  margin-left: $margin-home-page;
   max-width: 75%;
   button {
+    margin-top: 15px;
     @include button-params(
       $secondary-color,
       $accent-color,
       $accent-color-hover,
       $secondary-color,
-      transparent
+      $base-color,
+      1.3rem
     );
   }
   h1 {
@@ -17,15 +20,15 @@
 }
 
 .current-game {
-  width: 50%;
-  margin-top: 30px;
+  width: 40%;
+  margin-top: 50px;
   h2 {
     font-size: $h2-font;
     font-weight: $h2-weight;
   }
   h3 {
     color: $accent-color;
-    margin-left: 10px;
+    margin-left: $margin-home-page;
   }
 }
 
@@ -45,7 +48,7 @@
 }
 
 .current-game-info-container {
-  margin-left: 10px;
+  margin-left: $margin-home-page;
 }
 
 .game-start {

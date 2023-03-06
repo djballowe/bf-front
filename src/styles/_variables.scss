@@ -18,6 +18,7 @@ $h1-weight: 600;
 // spacing
 
 $header-height: 100px;
+$margin-home-page: 20px;
 
 // mixins
 
@@ -26,14 +27,15 @@ $header-height: 100px;
   $background-color,
   $hover-background,
   $hover-color,
-  $border-color
+  $border-color,
+  $font-size
 ) {
   background-color: $background-color;
   color: $color;
   border-radius: 5px;
   border: 1px solid $border-color;
-  font-size: $main-button-font;
-  padding: 5px 25px 5px 25px;
+  font-size: $font-size;
+  padding: 5px 35px 5px 35px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   &:hover {

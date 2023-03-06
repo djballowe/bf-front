@@ -24,10 +24,17 @@ export default function Home() {
         />
       </Head>
       <div className="cover" />
-        <Container maxWidth='lg'>
-          <Header />
-          <HomeBody />
-        </Container>
+      <Container
+        maxWidth="xl"
+        xs={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+        }}
+      >
+        <Header />
+        <HomeBody />
+      </Container>
     </>
   );
 }

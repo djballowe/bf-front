@@ -1,8 +1,9 @@
 import React from "react";
 import { Container } from "@mui/system";
 import Image from "next/image";
-import placeHolder from "src/media/PlaceHolders/seattle-mariners-s-logo.png";
-import placeHolder2 from "src/media/PlaceHolders/toronto-blue-jays-logo-new.png";
+import SEA from "src/media/PlaceHolders/seattle-mariners-s-logo.png";
+import TOR from "src/media/PlaceHolders/toronto-blue-jays-logo-new.png";
+import GameCards from "./GameCards";
 
 export default function HomeBody() {
   const imageStyles = {
@@ -24,14 +25,14 @@ export default function HomeBody() {
             <h3>Live Game</h3>
             <div className="current-teams">
               <div className="team-name">
-                <Image src={placeHolder} alt="" style={imageStyles} />
+                <Image src={SEA} alt="" style={imageStyles} />
                 <h2>Mariners</h2>
               </div>
               <div className="current-score">20</div>
             </div>
             <div className="current-teams">
               <div className="team-name">
-                <Image src={placeHolder2} alt="" style={imageStyles} />
+                <Image src={TOR} alt="" style={imageStyles} />
                 <h2>Blue Jays</h2>
               </div>
               <div className="current-score">3</div>
@@ -49,7 +50,20 @@ export default function HomeBody() {
           </div>
         </div>
       </div>
-      <div className="grid-items"></div>
+      <div className="grid-items">
+        <div className="games">
+          <p>Games</p>
+        </div>
+        <div className="live-games-carousel">
+          <GameCards />
+          <GameCards />
+          <GameCards />
+          <GameCards />
+          <GameCards />
+          <GameCards />
+          <GameCards />
+        </div>
+      </div>
     </div>
   );
 }
