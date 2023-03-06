@@ -9,9 +9,13 @@ export default function GameCards() {
     height: "auto",
   };
 
+  const cardStyles = {
+    background: "linear-gradient(136deg, rgba(153,24,24,1), rgba(0,31,119,1))"
+  };
+
   return (
     <div className="card-body">
-      <div className="card-teams">
+      <div className="card-teams" style={cardStyles}>
         <div className="card-team-name">
           <Image src={BOS} alt="" style={imageStyles} />
           <p>BOS</p>

@@ -294,13 +294,13 @@ body {
 }
 
 .card-body {
-  border: 1px solid yellow;
   border-radius: 10px;
   max-width: 400px;
   margin: 0px 20px 0px 20px;
 }
 
 .card-teams {
+  border-radius: 10px 10px 0 0;
   padding: 30px 50px 30px 50px;
   display: flex;
   align-items: center;
@@ -324,7 +324,7 @@ body {
   justify-content: flex-start;
   padding: 20px;
   background-color: black;
-  border-radius: 10px;
+  border-radius: 0 0 10px 10px;
 }
 .card-live p:first-of-type {
   background-color: #dc002a;
