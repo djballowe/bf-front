@@ -133,23 +133,20 @@ body {
 }
 
 .home-container {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  gap: 10px;
-  width: 100%;
   height: calc(100vh - 100px);
+  display: grid;
+  align-items: center;
+  grid-template-rows: auto;
+  gap: 20px;
+  width: 100%;
 }
-.home-container .grid-items {
-  border: 1px solid red;
-}
-
 .cover {
   z-index: -1;
   position: absolute;
   background-image: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgba(255, 255, 255, 0) 15%, rgba(255, 255, 255, 0) 85%, rgb(0, 0, 0) 98%), url(../media/testBanner.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 75%;
+  opacity: 60%;
   width: 100vw;
   height: 100vh;
 }
@@ -159,7 +156,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(0, 0, 0, 0.397);
 }
 .header .image {
   -o-object-fit: contain;
@@ -171,7 +167,7 @@ body {
   border-radius: 5px;
   border: 1px solid white;
   font-size: 1rem;
-  padding: 5px 25px 5px 25px;
+  padding: 5px 35px 5px 35px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
@@ -184,12 +180,157 @@ body {
 .header-right {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
 }
 .header-right ul {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   margin: 0 10px 0 10px;
 }
 .header-right ul li {
   margin: 0 10px 0 10px;
+}
+
+.banner-title {
+  margin-left: 20px;
+  max-width: 75%;
+}
+.banner-title button {
+  margin-top: 15px;
+  background-color: #f3bd05;
+  color: black;
+  border-radius: 5px;
+  border: 1px solid white;
+  font-size: 1.3rem;
+  padding: 5px 35px 5px 35px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.banner-title button:hover {
+  border: 1px solid transparent;
+  background-color: #f3db8c;
+  color: black;
+}
+.banner-title h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 130%;
+}
+
+.current-game {
+  width: 40%;
+  margin-top: 50px;
+}
+.current-game h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.current-game h3 {
+  color: #f3bd05;
+  margin-left: 20px;
+}
+
+.current-teams {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.current-teams:nth-of-type(2) {
+  margin-top: 10px;
+}
+.current-teams .team-name {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.current-teams .current-score {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.current-game-info-container {
+  margin-left: 20px;
+}
+
+.game-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 20px 0 20px 0;
+}
+.game-start p:nth-of-type(1) {
+  background-color: #dc002a;
+  padding: 2px 7px 2px 7px;
+  border-radius: 3px;
+  margin-right: 15px;
+}
+
+.current-game-pitchers {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.current-game-pitchers p:nth-of-type(1) {
+  margin-right: 20px;
+}
+
+.grid-items:nth-of-type(2) {
+  overflow: scroll;
+}
+
+.games {
+  margin: 0 0 20px 20px;
+}
+.games p {
+  font-size: 1.5rem;
+}
+
+.live-games-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.card-body {
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 0px 20px 0px 20px;
+}
+
+.card-teams {
+  border-radius: 10px 10px 0 0;
+  padding: 30px 50px 30px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-teams .card-team-name {
+  text-align: center;
+}
+.card-teams .card-score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-teams .card-score h3 {
+  margin: 0 5px 0 5px;
+}
+
+.card-live {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  background-color: black;
+  border-radius: 0 0 10px 10px;
+}
+.card-live p:first-of-type {
+  background-color: #dc002a;
+  padding: 2px 7px 2px 7px;
+  border-radius: 3px;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin-right: 10px;
 }/*# sourceMappingURL=App.css.map */

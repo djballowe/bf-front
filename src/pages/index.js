@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import Header from "./components/header/header";
-import HomeBody from "./components/header/home/HomeBody";
+import HomeBody from "./components/home/HomeBody";
 import { Container } from "@mui/system";
 import coverImage from "../media/testBanner.jpg";
 import Image from "next/image";
@@ -24,10 +24,17 @@ export default function Home() {
         />
       </Head>
       <div className="cover" />
-        <Container>
-          <Header />
-          <HomeBody />
-        </Container>
+      <Container
+        maxWidth="xl"
+        xs={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+        }}
+      >
+        <Header />
+        <HomeBody />
+      </Container>
     </>
   );
 }

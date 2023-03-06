@@ -1,0 +1,56 @@
+.grid-items:nth-of-type(2) {
+  overflow: scroll;
+  //   align-self: center;
+}
+
+.games {
+  margin: 0 0 $margin-home-page $margin-home-page;
+  p {
+    font-size: 1.5rem;
+  }
+}
+
+.live-games-carousel {
+  @include flexCenter(flex-start);
+}
+
+.card-body {
+//   border: 1px solid yellow;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 0px 20px 0px 20px;
+}
+
+.card-teams {
+  border-radius: 10px 10px 0 0;
+//   background: linear-gradient(
+//     135deg,
+//     rgba(194, 31, 31, 1) 50%,
+//     rgba(0, 40, 152, 1) 50%
+//   );
+  padding: 30px 50px 30px 50px;
+  @include flexCenter(center);
+  .card-team-name {
+    text-align: center;
+  }
+  .card-score {
+    @include flexCenter(center);
+    h3 {
+      margin: 0 5px 0 5px;
+    }
+  }
+}
+
+.card-live {
+  @include flexCenter(flex-start);
+  padding: 20px;
+  background-color: $secondary-color;
+  border-radius: 0 0 10px 10px;
+  p:first-of-type {
+    background-color: $live-color;
+    padding: 2px 7px 2px 7px;
+    border-radius: 3px;
+    max-width: fit-content;
+    margin-right: 10px;
+  }
+}

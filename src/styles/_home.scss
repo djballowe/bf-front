@@ -1,11 +1,13 @@
 .home-container {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  gap: 10px;
-  width: 100%;
   height: calc(100vh - $header-height);
+  display: grid;
+  align-items: center;
+  grid-template-rows: auto;
+  gap: 20px;
+  width: 100%;
   .grid-items {
-    border: 1px solid red;
+    // margin: 1% 0 1% 0;
+    // border: 1px solid red;
   }
 }
 
@@ -22,7 +24,7 @@
     url(../media/testBanner.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 75%;
+  opacity: 60%;
   width: 100vw;
   height: 100vh;
 }
