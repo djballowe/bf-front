@@ -134,7 +134,7 @@ body {
 
 .home-container {
   display: grid;
-  grid-template-rows: 1.5fr 1fr;
+  grid-template-rows: 1.5fr 0.5fr;
   gap: 10px;
   width: 100%;
   height: calc(100vh - 100px);
@@ -159,7 +159,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(0, 0, 0, 0.397);
 }
 .header .image {
   -o-object-fit: contain;
@@ -194,6 +193,30 @@ body {
 }
 .header-right ul li {
   margin: 0 10px 0 10px;
+}
+
+.banner-title {
+  max-width: 75%;
+}
+.banner-title button {
+  background-color: #f3bd05;
+  color: black;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  font-size: 1rem;
+  padding: 5px 25px 5px 25px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.banner-title button:hover {
+  border: 1px solid transparent;
+  background-color: #f3db8c;
+  color: black;
+}
+.banner-title h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 130%;
 }
 
 .current-game {

@@ -1,6 +1,6 @@
 .home-container {
   display: grid;
-  grid-template-rows: 1.5fr 1fr;
+  grid-template-rows: 1.5fr .5fr;
   gap: 10px;
   width: 100%;
   height: calc(100vh - $header-height);

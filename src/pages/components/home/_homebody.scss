@@ -1,3 +1,21 @@
+.banner-title {
+  max-width: 75%;
+  button {
+    @include button-params(
+      $secondary-color,
+      $accent-color,
+      $accent-color-hover,
+      $secondary-color,
+      transparent
+    );
+  }
+  h1 {
+    font-size: $h1-font;
+    font-weight: $h1-weight;
+    line-height: 130%;
+  }
+}
+
 .current-game {
   width: 50%;
   margin-top: 30px;
@@ -6,8 +24,8 @@
     font-weight: $h2-weight;
   }
   h3 {
-    color: #f3bd05;
-    margin-left: 10px
+    color: $accent-color;
+    margin-left: 10px;
   }
 }
 

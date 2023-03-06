@@ -14,8 +14,10 @@ export default function HomeBody() {
     <div className="home-container">
       <div className="grid-items">
         <div className="favorite-team">
-          <div className="">
-            <h1>GET CURATED CONTENT FOR YOUR TEAM ANYWHERE</h1>
+          <div className="banner-title">
+            <h1>GET CURATED CONTENT</h1>
+            <h1>FOR YOUR TEAM</h1>
+            <h1>ANYWHERE</h1>
             <button>Get Content</button>
           </div>
           <div className="current-game">

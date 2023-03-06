@@ -1,12 +1,17 @@
 .header {
   height: $header-height;
   @include flexCenter(space-between);
-  background-color: rgba(0, 0, 0, 0.397);
   .image {
     object-fit: contain;
   }
   button {
-    @include secondary-button-params;
+    @include button-params(
+      $base-color,
+      transparent,
+      $base-color,
+      $secondary-color,
+      $base-color
+    );
   }
 }
 

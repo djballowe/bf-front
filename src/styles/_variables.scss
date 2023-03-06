@@ -1,31 +1,50 @@
+// colors
+
 $base-color: white;
 $secondary-color: black;
-$faded-secondary: #b49b9c;
+$accent-color: #f3bd05;
+$accent-color-hover: #f3db8c;
+$live-color: #dc002a;
+
+// fonts
+
 $main-button-font: 1rem;
-$header-height: 100px;
 $score-font: 2rem;
 $h2-font: 2rem;
 $h2-weight: 600;
-$live-color: #dc002a;
+$h1-font: 3rem;
+$h1-weight: 600;
 
-@mixin secondary-button-params() {
-  background-color: transparent;
-  color: white;
+// spacing
+
+$header-height: 100px;
+
+// mixins
+
+@mixin button-params(
+  $color,
+  $background-color,
+  $hover-background,
+  $hover-color,
+  $border-color
+) {
+  background-color: $background-color;
+  color: $color;
   border-radius: 5px;
-  border: 1px solid white;
+  border: 1px solid $border-color;
   font-size: $main-button-font;
   padding: 5px 25px 5px 25px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   &:hover {
     border: 1px solid transparent;
-    background-color: $base-color;
-    color: $secondary-color;
+    background-color: $hover-background;
+    color: $hover-color;
   }
 }
 
 @mixin flexCenter($justify) {
-    display: flex;
-    align-items: center;
-    justify-content: $justify;
+  display: flex;
+  align-items: center;
+  justify-content: $justify;
 }
