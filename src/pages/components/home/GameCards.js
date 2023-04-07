@@ -26,6 +26,29 @@ export default function GameCards({
     height: "auto",
   };
 
+  const statusOptions = {
+    InProgress: "Live",
+    Scheduled: "Scheduled",
+    Final: "Final",
+  };
+
+  const getTime = () => {
+    const time = date.slice(11, 16);
+    let hour = parseInt(time.slice(0, 2));
+    let minute = time.slice(3);
+    if (hour > 12) {
+      hour = hour - 12;
+    }
+    return (
+      <div className="card-live">
+        <p>
+          {status === "Scheduled" ? `${hour}:${minute}` : statusOptions[status]}
+        </p>
+        <p>{homeStarter}</p>
+      </div>
+    );
+  };
+
   const cardStyles = {
     background: `linear-gradient(134deg, ${teamColors[awayTeam]} 50%, ${teamColors[homeTeam]} 50%)`,
   };
@@ -38,19 +61,16 @@ export default function GameCards({
           <p>{awayTeam}</p>
         </div>
         <div className="card-score">
-          <h3>{homeTeamRuns}</h3>
-          <h3>{homeTeamRuns === null ? "@" : "-"}</h3>
           <h3>{awayTeamRuns}</h3>
+          <h3>{homeTeamRuns === null ? "@" : "-"}</h3>
+          <h3>{homeTeamRuns}</h3>
         </div>
         <div className="card-team-name">
           <Image src={NYM} alt="" style={imageStyles} />
           <p>{homeTeam}</p>
         </div>
       </div>
-      <div className="card-live">
-        <p>Live</p>
-        <p>Pitcher</p>
-      </div>
+      {getTime()}
     </div>
   );
 }

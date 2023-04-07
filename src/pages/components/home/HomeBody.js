@@ -44,20 +44,18 @@ export default function HomeBody() {
         );
       })
     : null;
-
-  console.log(scores);
-
+    
   useEffect(() => {
-    // let interval = setInterval(() => {
+    let interval = setInterval(() => {
     apiInstanceSchedule
       .get(`/GamesByDate/${currentDate}?key=${apiKey}`)
       .then((res) => {
         setScores(res.data);
       });
-    // }, 15000);
-    // return () => {
-    //   clearInterval(interval);
-    // };
+    }, 15000);
+    return () => {
+      clearInterval(interval);
+    };
   }, [currentDate]);
 
   return (
