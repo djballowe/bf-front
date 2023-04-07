@@ -1,15 +1,62 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container } from "@mui/system";
-import Image from "next/image";
-import SEA from "src/media/PlaceHolders/seattle-mariners-s-logo.png";
-import TOR from "src/media/PlaceHolders/toronto-blue-jays-logo-new.png";
 import GameCards from "./GameCards";
+import { apiKey } from "../utils/axios";
+import { apiInstanceSchedule } from "../utils/axios";
+import { monthsShort } from "../utils/data";
+import { teamValues } from "../utils/data";
+import FocusedGame from "./FocusedGame";
 
 export default function HomeBody() {
-  const imageStyles = {
-    width: "70px",
-    height: "auto",
-  };
+  const [favoriteTeam, setFavoriteTeam] = useState([]);
+  const [scores, setScores] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const date = new Date();
+  let day = date.getDate();
+  let month = date.getMonth() + 1;
+  let year = date.getFullYear();
+  let currentDate = `${year}-${day}-${monthsShort[month]}`;
+
+  const handleCardClick = () => {};
+
+  const games = scores.length
+    ? scores.map((game, i) => {
+        return (
+          <GameCards
+            key={i}
+            awayTeam={game.AwayTeam}
+            homeTeam={game.HomeTeam}
+            date={game.DateTime}
+            homeStarter={game.HomeTeamStartingPitcher}
+            awayStarter={game.AwayTeamStartingPitcher}
+            inning={game.Inning}
+            homeTeamRuns={game.HomeTeamRuns}
+            awayTeamRuns={game.AwayTeamRuns}
+            outs={game.Outs}
+            status={game.Status}
+            winningPitcher={game.WinningPitcher}
+            runnerOnFirst={game.RunnerOnFirst}
+            runnerOnSecond={game.RunnerOnSecond}
+            runnerOnThird={game.RunnerOnThird}
+            onClick={handleCardClick}
+          />
+        );
+      })
+    : null;
+    
+  useEffect(() => {
+    let interval = setInterval(() => {
+    apiInstanceSchedule
+      .get(`/GamesByDate/${currentDate}?key=${apiKey}`)
+      .then((res) => {
+        setScores(res.data);
+      });
+    }, 15000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [currentDate]);
 
   return (
     <div className="home-container">
@@ -21,48 +68,14 @@ export default function HomeBody() {
             <h1>ANYWHERE</h1>
             <button>Get Content</button>
           </div>
-          <div className="current-game">
-            <h3>Live Game</h3>
-            <div className="current-teams">
-              <div className="team-name">
-                <Image src={SEA} alt="" style={imageStyles} />
-                <h2>Mariners</h2>
-              </div>
-              <div className="current-score">20</div>
-            </div>
-            <div className="current-teams">
-              <div className="team-name">
-                <Image src={TOR} alt="" style={imageStyles} />
-                <h2>Blue Jays</h2>
-              </div>
-              <div className="current-score">3</div>
-            </div>
-          </div>
-          <div className="current-game-info-container">
-            <div className="game-start">
-              <p>Live</p>
-              <p>8:10PM Game Time</p>
-            </div>
-            <div className="current-game-pitchers">
-              <p className="home-pitcher">Webb 10-0, 0.21 ERA</p>
-              <p className="away-pitcher">Kershaw 1-20, 678.34 ERA</p>
-            </div>
-          </div>
+          <FocusedGame />
         </div>
       </div>
       <div className="grid-items">
         <div className="games">
           <p>Games</p>
         </div>
-        <div className="live-games-carousel">
-          <GameCards />
-          <GameCards />
-          <GameCards />
-          <GameCards />
-          <GameCards />
-          <GameCards />
-          <GameCards />
-        </div>
+        <div className="live-games-carousel">{games}</div>
       </div>
     </div>
   );
