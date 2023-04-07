@@ -31,7 +31,8 @@ export default function HomeBody() {
             homeStarter={game.HomeTeamStartingPitcher}
             awayStarter={game.AwayTeamStartingPitcher}
             inning={game.Inning}
-            innings={game.Innings}
+            homeTeamRuns={game.HomeTeamRuns}
+            awayTeamRuns={game.AwayTeamRuns}
             outs={game.Outs}
             status={game.Status}
             winningPitcher={game.WinningPitcher}
@@ -76,15 +77,7 @@ export default function HomeBody() {
         <div className="games">
           <p>Games</p>
         </div>
-        <div className="live-games-carousel">
-          <GameCards />
-          <GameCards />
-          <GameCards />
-          <GameCards />
-          <GameCards />
-          <GameCards />
-          <GameCards />
-        </div>
+        <div className="live-games-carousel">{games}</div>
       </div>
     </div>
   );
