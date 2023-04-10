@@ -78,3 +78,9 @@ export const monthsShort = {
   11: "NOV",
   12: "DEC",
 };
+
+export const statusOptions = {
+  InProgress: "Live",
+  Scheduled: "Scheduled",
+  Final: "Final",
+};

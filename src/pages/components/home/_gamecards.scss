@@ -1,6 +1,5 @@
 .grid-items:nth-of-type(2) {
   overflow: scroll;
-  //   align-self: center;
 }
 
 .games {
@@ -12,24 +11,25 @@
 
 .live-games-carousel {
   @include flexCenter(flex-start);
+  position: relative;
 }
 
 .card-body {
-//   border: 1px solid yellow;
   border-radius: 10px;
-  max-width: 400px;
   margin: 0px 20px 0px 20px;
+  width: calc(1488px / 4 - 40px);
+  flex-shrink: 0;
 }
 
 .card-teams {
   border-radius: 10px 10px 0 0;
-//   background: linear-gradient(
-//     135deg,
-//     rgba(194, 31, 31, 1) 50%,
-//     rgba(0, 40, 152, 1) 50%
-//   );
+  //   background: linear-gradient(
+  //     135deg,
+  //     rgba(194, 31, 31, 1) 50%,
+  //     rgba(0, 40, 152, 1) 50%
+  //   );
   padding: 30px 50px 30px 50px;
-  @include flexCenter(center);
+  @include flexCenter(space-between);
   .card-team-name {
     text-align: center;
   }
@@ -47,10 +47,19 @@
   background-color: $secondary-color;
   border-radius: 0 0 10px 10px;
   p:first-of-type {
-    background-color: $live-color;
     padding: 2px 7px 2px 7px;
     border-radius: 3px;
     max-width: fit-content;
     margin-right: 10px;
   }
+}
+
+.arrow {
+  @include flexCenter(flex-start);
+  background-color: $secondary-color;
+  border-radius: 10px;
+  height: 208.25px;
+  position: absolute;
+  left: 98%;
+  cursor: pointer;
 }

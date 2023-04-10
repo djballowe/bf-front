@@ -3,6 +3,7 @@ import Image from "next/image";
 import BOS from "src/media/PlaceHolders/boston-red-sox-b-logo-cap-transparent.png";
 import NYM from "src/media/PlaceHolders/new-york-mets-hat-logo.png";
 import { teamColors } from "../utils/data";
+import { statusOptions } from "../utils/data";
 
 export default function GameCards({
   awayTeam,
@@ -26,25 +27,25 @@ export default function GameCards({
     height: "auto",
   };
 
-  const statusOptions = {
-    InProgress: "Live",
-    Scheduled: "Scheduled",
-    Final: "Final",
-  };
-
   const getTime = () => {
     const time = date.slice(11, 16);
     let hour = parseInt(time.slice(0, 2));
     let minute = time.slice(3);
+    let anteMeridiem = "AM";
     if (hour > 12) {
       hour = hour - 12;
+      anteMeridiem = "PM";
     }
     return (
       <div className="card-live">
-        <p>
-          {status === "Scheduled" ? `${hour}:${minute}` : statusOptions[status]}
+        <p
+          style={{ backgroundColor: status === "InProgress" ? "#dc002a" : "" }}
+        >
+          {status === "Scheduled"
+            ? `${hour}:${minute} ${anteMeridiem}`
+            : statusOptions[status]}
         </p>
-        <p>{homeStarter}</p>
+        <p>Starting Pitcher</p>
       </div>
     );
   };
