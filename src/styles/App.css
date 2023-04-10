@@ -327,7 +327,6 @@ body {
   border-radius: 0 0 10px 10px;
 }
 .card-live p:first-of-type {
-  background-color: #dc002a;
   padding: 2px 7px 2px 7px;
   border-radius: 3px;
   max-width: -moz-fit-content;

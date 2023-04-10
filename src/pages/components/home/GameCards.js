@@ -36,15 +36,21 @@ export default function GameCards({
     const time = date.slice(11, 16);
     let hour = parseInt(time.slice(0, 2));
     let minute = time.slice(3);
+    let anteMeridiem = "AM";
     if (hour > 12) {
       hour = hour - 12;
+      anteMeridiem = "PM";
     }
     return (
       <div className="card-live">
-        <p>
-          {status === "Scheduled" ? `${hour}:${minute}` : statusOptions[status]}
+        <p
+          style={{ backgroundColor: status === "InProgress" ? "#dc002a" : "" }}
+        >
+          {status === "Scheduled"
+            ? `${hour}:${minute} ${anteMeridiem}`
+            : statusOptions[status]}
         </p>
-        <p>{homeStarter}</p>
+        <p>Starting Pitcher</p>
       </div>
     );
   };
