@@ -6,6 +6,8 @@ import { apiInstanceSchedule } from "../utils/axios";
 import { monthsShort } from "../utils/data";
 import { teamValues } from "../utils/data";
 import FocusedGame from "./FocusedGame";
+import ArrowRight from "@mdi/react";
+import { mdiChevronRight } from "@mdi/js";
 
 export default function HomeBody() {
   const [favoriteTeam, setFavoriteTeam] = useState([]);
@@ -19,6 +21,17 @@ export default function HomeBody() {
   let currentDate = `${year}-${day}-${monthsShort[month]}`;
 
   const handleCardClick = () => {};
+
+  const fetchScores = () => {
+    apiInstanceSchedule
+      .get(`/GamesByDate/${currentDate}?key=${apiKey}`)
+      .then((res) => {
+        let scoresArray = res.data;
+        setFavoriteTeam(scoresArray[0]);
+        setScores(scoresArray.splice(1));
+        setIsLoading(false);
+      });
+  };
 
   const games = scores.length
     ? scores.map((game, i) => {
@@ -44,19 +57,17 @@ export default function HomeBody() {
         );
       })
     : null;
-    
+
   useEffect(() => {
+    setIsLoading(true);
+    fetchScores();
     let interval = setInterval(() => {
-    apiInstanceSchedule
-      .get(`/GamesByDate/${currentDate}?key=${apiKey}`)
-      .then((res) => {
-        setScores(res.data);
-      });
+      fetchScores();
     }, 15000);
     return () => {
       clearInterval(interval);
     };
-  }, [currentDate]);
+  }, []);
 
   return (
     <div className="home-container">
@@ -68,14 +79,20 @@ export default function HomeBody() {
             <h1>ANYWHERE</h1>
             <button>Get Content</button>
           </div>
-          <FocusedGame />
+          {isLoading ? (
+            "LOADING SCORES"
+          ) : (
+            <FocusedGame favoriteTeam={favoriteTeam} />
+          )}
         </div>
       </div>
       <div className="grid-items">
         <div className="games">
           <p>Games</p>
         </div>
-        <div className="live-games-carousel">{games}</div>
+        <div className="live-games-carousel">
+          {isLoading ? "LOADING SCORES" : games}
+        </div>
       </div>
     </div>
   );

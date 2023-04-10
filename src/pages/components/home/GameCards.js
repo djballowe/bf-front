@@ -3,6 +3,7 @@ import Image from "next/image";
 import BOS from "src/media/PlaceHolders/boston-red-sox-b-logo-cap-transparent.png";
 import NYM from "src/media/PlaceHolders/new-york-mets-hat-logo.png";
 import { teamColors } from "../utils/data";
+import { statusOptions } from "../utils/data";
 
 export default function GameCards({
   awayTeam,
@@ -24,12 +25,6 @@ export default function GameCards({
   const imageStyles = {
     width: "70px",
     height: "auto",
-  };
-
-  const statusOptions = {
-    InProgress: "Live",
-    Scheduled: "Scheduled",
-    Final: "Final",
   };
 
   const getTime = () => {
