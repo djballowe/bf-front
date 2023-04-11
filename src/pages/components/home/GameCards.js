@@ -1,9 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import BOS from "src/media/PlaceHolders/boston-red-sox-b-logo-cap-transparent.png";
 import NYM from "src/media/PlaceHolders/new-york-mets-hat-logo.png";
-import { teamColors } from "../utils/data";
+import { teamColors, teamValues } from "../utils/data";
 import { statusOptions } from "../utils/data";
+import { s3BaseUrl } from "../utils/axios";
+import { teamValuesLong } from "../utils/data";
 
 export default function GameCards({
   awayTeam,
@@ -23,8 +24,8 @@ export default function GameCards({
   onClick,
 }) {
   const imageStyles = {
-    width: "70px",
-    height: "auto",
+    width: "auto",
+    height: "50px",
   };
 
   const getTime = () => {
@@ -58,7 +59,12 @@ export default function GameCards({
     <div className="card-body">
       <div className="card-teams" style={cardStyles}>
         <div className="card-team-name">
-          <Image src={BOS} alt="" style={imageStyles} />
+          <img
+            src={`${s3BaseUrl}/${teamValuesLong[awayTeam]}/${teamValues[awayTeam]}.png`}
+            alt=""
+            style={imageStyles}
+          />
+
           <p>{awayTeam}</p>
         </div>
         <div className="card-score">
@@ -67,7 +73,15 @@ export default function GameCards({
           <h3>{homeTeamRuns}</h3>
         </div>
         <div className="card-team-name">
-          <Image src={NYM} alt="" style={imageStyles} />
+          {/* <Image
+            src={`${s3BaseUrl}/${teamValuesLong[homeTeam]}/${teamValues[homeTeam]}.png`}
+            sizes="width"
+          /> */}
+          <img
+            src={`${s3BaseUrl}/${teamValuesLong[homeTeam]}/${teamValues[homeTeam]}.png`}
+            alt=""
+            style={imageStyles}
+          />
           <p>{homeTeam}</p>
         </div>
       </div>

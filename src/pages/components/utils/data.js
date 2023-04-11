@@ -31,6 +31,37 @@ export const teamValues = {
   BOS: "Red Sox",
 };
 
+export const teamValuesLong = {
+  ARI: "Arizona",
+  ATL: "Atlanta",
+  BAL: "Baltimore",
+  BOS: "Boston",
+  CHW: "Chicago WS",
+  CIN: "Cincinnati",
+  CLE: "Cleveland",
+  COL: "Colorado",
+  DET: "Detroit",
+  HOU: "Houston",
+  KC: "Kansas City",
+  LAA: "Los Angeles Angles",
+  LAD: "Los Angeles Dodgers",
+  MIA: "Miami",
+  MIL: "Milwaukee",
+  MIN: "Minnesota",
+  NYM: "New York Mets",
+  NYY: "New York Yankees",
+  OAK: "Oakland",
+  PHI: "Philadelphia",
+  PIT: "Pittsburgh",
+  SD: "San Diego",
+  SF: "San Francisco",
+  SEA: "Seattle",
+  STL: "St Louis",
+  TB: "Tampa Bay",
+  TOR: "Toronto",
+  WSH: "Washington",
+};
+
 export const teamColors = {
   HOU: "rgb(0, 45, 98)",
   TEX: "rgb(0, 50, 120)",
